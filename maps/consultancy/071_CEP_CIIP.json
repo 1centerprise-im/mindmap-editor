@@ -1,5 +1,5 @@
 {
-  "title": "071 Readiness07",
+  "title": "071 Readiness",
   "nodes": [
     {
       "id": "n1",
@@ -45,8 +45,8 @@
     },
     {
       "id": "n3",
-      "x": 854.6172502669795,
-      "y": 223.75973837301558,
+      "x": 875.3625588042705,
+      "y": 221.16657480585422,
       "w": 0,
       "h": 0,
       "text": "02_ADMINISTRATION_MGT",
@@ -499,7 +499,7 @@
       "to": "n17"
     }
   ],
-  "nid": 58,
+  "nid": 59,
   "edgeThickness": 1.5,
   "edgeColor": "#c8c0b8",
   "annotations": [
