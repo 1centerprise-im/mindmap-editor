@@ -1,15 +1,15 @@
 {
-  "title": "UNDP_Mapping",
+  "title": "UNDP Mapping",
   "nodes": [
     {
       "id": "n1",
-      "x": 259,
-      "y": 269,
+      "x": 400,
+      "y": 300,
       "w": 0,
       "h": 0,
-      "text": "UNDP_Mapping",
-      "ci": 4,
-      "link": "https://drive.google.com/drive/folders/1OChZZ6QDn11vHj_x7HqAUXBMUXg-A32s?usp=drive_link",
+      "text": "UNDP Mapping",
+      "ci": 0,
+      "link": "",
       "collapsed": false,
       "isNote": false,
       "fontSize": 16,
@@ -24,6 +24,5 @@
     }
   ],
   "edges": [],
-  "nid": 2,
-  "annotations": []
+  "nid": 2
 }
