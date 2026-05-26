@@ -441,6 +441,27 @@
       "shape": "rounded",
       "borderColor": "",
       "borderWidth": 0
+    },
+    {
+      "id": "n68",
+      "x": 2082.838514889701,
+      "y": -106.69354938553737,
+      "w": 0,
+      "h": 0,
+      "text": "Nisso_Materials",
+      "ci": 4,
+      "link": "https://drive.google.com/drive/folders/1cF954WjZcnS2sbLNFc_Iaj1YciE0qE2_?usp=drive_link",
+      "collapsed": false,
+      "isNote": false,
+      "fontSize": 13,
+      "fontFamily": "Nunito",
+      "textColor": "",
+      "bold": false,
+      "italic": false,
+      "textAlign": "left",
+      "shape": "rounded",
+      "borderColor": "",
+      "borderWidth": 0
     }
   ],
   "edges": [
@@ -538,9 +559,14 @@
       "id": "e67",
       "from": "n62",
       "to": "n21"
+    },
+    {
+      "id": "e69",
+      "from": "n17",
+      "to": "n68"
     }
   ],
-  "nid": 68,
+  "nid": 70,
   "edgeThickness": 1.5,
   "edgeColor": "#c8c0b8",
   "annotations": [
