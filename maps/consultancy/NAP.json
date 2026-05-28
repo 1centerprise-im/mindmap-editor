@@ -466,7 +466,7 @@
     {
       "id": "n74",
       "x": 259.04324764923757,
-      "y": -256.4688705426086,
+      "y": -258.2493726232392,
       "w": 0,
       "h": 0,
       "text": "03_Tech_Technology",
@@ -672,6 +672,90 @@
       "shape": "rounded",
       "borderColor": "",
       "borderWidth": 1
+    },
+    {
+      "id": "n96",
+      "x": 207.59260542174155,
+      "y": -488.3646145347072,
+      "w": 0,
+      "h": 0,
+      "text": "WARNINGS TO BE TAKEN INTO ACCOUNT",
+      "ci": 2,
+      "link": "",
+      "collapsed": false,
+      "isNote": false,
+      "fontSize": 13,
+      "fontFamily": "Nunito",
+      "textColor": "",
+      "bold": false,
+      "italic": false,
+      "textAlign": "left",
+      "shape": "rounded",
+      "borderColor": "",
+      "borderWidth": 0
+    },
+    {
+      "id": "n97",
+      "x": -95.09274828546182,
+      "y": -582.2456333315937,
+      "w": 0,
+      "h": 0,
+      "text": "read before you rate",
+      "ci": 0,
+      "link": "",
+      "collapsed": false,
+      "isNote": false,
+      "fontSize": 13,
+      "fontFamily": "Nunito",
+      "textColor": "",
+      "bold": false,
+      "italic": false,
+      "textAlign": "left",
+      "shape": "rounded",
+      "borderColor": "",
+      "borderWidth": 0
+    },
+    {
+      "id": "n98",
+      "x": 181.69439333984178,
+      "y": -590.3388246071873,
+      "w": 277.3225570393139,
+      "h": 57.56774429606861,
+      "text": "data-plus-analysis is not the same as document-served",
+      "ci": 0,
+      "link": "",
+      "collapsed": false,
+      "isNote": false,
+      "fontSize": 13,
+      "fontFamily": "Nunito",
+      "textColor": "",
+      "bold": false,
+      "italic": false,
+      "textAlign": "left",
+      "shape": "rounded",
+      "borderColor": "",
+      "borderWidth": 0
+    },
+    {
+      "id": "n99",
+      "x": 528.0829799352509,
+      "y": -598.4320158827812,
+      "w": 264.6193241511081,
+      "h": 72.13548859213722,
+      "text": "drive the final list from claims, not sources, so nothing hides",
+      "ci": 0,
+      "link": "",
+      "collapsed": false,
+      "isNote": false,
+      "fontSize": 13,
+      "fontFamily": "Nunito",
+      "textColor": "",
+      "bold": false,
+      "italic": false,
+      "textAlign": "left",
+      "shape": "rounded",
+      "borderColor": "",
+      "borderWidth": 0
     }
   ],
   "edges": [
@@ -814,9 +898,24 @@
       "id": "e91",
       "from": "n84",
       "to": "n87"
+    },
+    {
+      "id": "e100",
+      "from": "n96",
+      "to": "n99"
+    },
+    {
+      "id": "e101",
+      "from": "n96",
+      "to": "n98"
+    },
+    {
+      "id": "e102",
+      "from": "n96",
+      "to": "n97"
     }
   ],
-  "nid": 96,
+  "nid": 103,
   "annotations": [
     {
       "id": "a22",
