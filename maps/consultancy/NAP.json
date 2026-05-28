@@ -654,10 +654,10 @@
     },
     {
       "id": "n92",
-      "x": 1455.5160903751528,
-      "y": -294.3829965867537,
-      "w": 0,
-      "h": 0,
+      "x": 2060.7186537228813,
+      "y": -508.8329679263235,
+      "w": 232.11589597411296,
+      "h": 69.80624641744623,
       "text": "You have collected these information base for\n report writting",
       "ci": 0,
       "link": "",
@@ -665,13 +665,13 @@
       "isNote": false,
       "fontSize": 13,
       "fontFamily": "Nunito",
-      "textColor": "",
+      "textColor": "#ff0000",
       "bold": false,
       "italic": false,
-      "textAlign": "left",
+      "textAlign": "center",
       "shape": "rounded",
       "borderColor": "",
-      "borderWidth": 0
+      "borderWidth": 1
     }
   ],
   "edges": [
