@@ -46,7 +46,7 @@
     {
       "id": "n3",
       "x": 1000.3134941396002,
-      "y": 249.4983947322994,
+      "y": 570.7846945695869,
       "w": 273.21925374509624,
       "h": 30.41647360111222,
       "text": "02_ADMINISTRATION_MGT",
@@ -73,7 +73,7 @@
       "text": "D1",
       "ci": 4,
       "link": "https://drive.google.com/drive/folders/1ZO3LRz349ptRhnWGaadedEJ4pSxWNLGa?usp=drive_link",
-      "collapsed": true,
+      "collapsed": false,
       "isNote": false,
       "fontSize": 13,
       "fontFamily": "Nunito",
@@ -276,7 +276,7 @@
     },
     {
       "id": "n51",
-      "x": 1816.2528437300584,
+      "x": 1986.2528437300584,
       "y": -237.11958115949614,
       "w": 0,
       "h": 0,
