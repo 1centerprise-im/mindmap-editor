@@ -756,6 +756,48 @@
       "shape": "rounded",
       "borderColor": "",
       "borderWidth": 0
+    },
+    {
+      "id": "n103",
+      "x": -148.40183319064377,
+      "y": 205.61613685718459,
+      "w": 0,
+      "h": 0,
+      "text": "Data_from_Tajik_Agencies",
+      "ci": 3,
+      "link": "https://drive.google.com/drive/folders/1WhGpdWDLaumdDvrPwrZu8RAFRVLREuEG?usp=drive_link",
+      "collapsed": false,
+      "isNote": false,
+      "fontSize": 13,
+      "fontFamily": "Nunito",
+      "textColor": "",
+      "bold": false,
+      "italic": false,
+      "textAlign": "left",
+      "shape": "rounded",
+      "borderColor": "",
+      "borderWidth": 0
+    },
+    {
+      "id": "n104",
+      "x": -230.69213345159284,
+      "y": 339.33787478122684,
+      "w": 0,
+      "h": 0,
+      "text": "Syrdarya_Basin_Mgt_Plan_2026_2030",
+      "ci": 3,
+      "link": "https://drive.google.com/drive/folders/13p88XdAQTIi56jeqK6XvptiPoRZQRrym?usp=drive_link",
+      "collapsed": false,
+      "isNote": false,
+      "fontSize": 13,
+      "fontFamily": "Nunito",
+      "textColor": "",
+      "bold": false,
+      "italic": false,
+      "textAlign": "left",
+      "shape": "rounded",
+      "borderColor": "",
+      "borderWidth": 0
     }
   ],
   "edges": [
@@ -913,9 +955,19 @@
       "id": "e102",
       "from": "n96",
       "to": "n97"
+    },
+    {
+      "id": "e105",
+      "from": "n1",
+      "to": "n103"
+    },
+    {
+      "id": "e106",
+      "from": "n1",
+      "to": "n104"
     }
   ],
-  "nid": 103,
+  "nid": 107,
   "annotations": [
     {
       "id": "a22",
