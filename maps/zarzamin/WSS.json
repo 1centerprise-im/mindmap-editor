@@ -126,6 +126,27 @@
       "shape": "rounded",
       "borderColor": "",
       "borderWidth": 0
+    },
+    {
+      "id": "n12",
+      "x": 1113.0540204334034,
+      "y": 223.9123091557152,
+      "w": 0,
+      "h": 0,
+      "text": "STEP_4_WSN_26-01-10_Community_Validation",
+      "ci": 0,
+      "link": "https://drive.google.com/drive/folders/1-0MsWwuREsHseZWdz6qtLFd5I4z1z7I3?usp=drive_link",
+      "collapsed": false,
+      "isNote": false,
+      "fontSize": 13,
+      "fontFamily": "Nunito",
+      "textColor": "",
+      "bold": false,
+      "italic": false,
+      "textAlign": "left",
+      "shape": "rounded",
+      "borderColor": "",
+      "borderWidth": 0
     }
   ],
   "edges": [
@@ -145,7 +166,7 @@
       "to": "n10"
     }
   ],
-  "nid": 12,
+  "nid": 13,
   "annotations": [
     {
       "id": "a8",
