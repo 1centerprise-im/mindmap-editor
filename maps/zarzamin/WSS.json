@@ -88,7 +88,7 @@
     {
       "id": "n5",
       "x": 942.3470138700128,
-      "y": 79.5,
+      "y": 78.33326130608879,
       "w": 0,
       "h": 0,
       "text": "REPORT_CZU_Zarzamin",
@@ -108,8 +108,8 @@
     },
     {
       "id": "n10",
-      "x": 1173.7734825209438,
-      "y": 11.25,
+      "x": 1166.7730503574767,
+      "y": -52.92062816511624,
       "w": 0,
       "h": 0,
       "text": "Answers to All comments",
@@ -129,13 +129,13 @@
     },
     {
       "id": "n12",
-      "x": 1106.4867168464093,
-      "y": 264.125,
-      "w": 351,
-      "h": 56,
-      "text": "01_Detailed WAP Programs Implementation workplan and list of priority and supporting measures (programmes 1 - 5) discussion with UNDP. ",
+      "x": 1107.2203269638474,
+      "y": 236.74643478873847,
+      "w": 0,
+      "h": 0,
+      "text": "STEP_4_WSN_26-01-10_Community_Validation",
       "ci": 0,
-      "link": "https://drive.google.com/drive/folders/1udtaYR29NnZ7vtIAZxGJXdzetkXi6-nT?usp=drive_link",
+      "link": "https://drive.google.com/drive/folders/1-0MsWwuREsHseZWdz6qtLFd5I4z1z7I3?usp=drive_link",
       "collapsed": false,
       "isNote": false,
       "fontSize": 13,
@@ -147,6 +147,90 @@
       "shape": "rounded",
       "borderColor": "",
       "borderWidth": 0
+    },
+    {
+      "id": "n14",
+      "x": 1530.7464728536147,
+      "y": 201.7442739714024,
+      "w": 0,
+      "h": 0,
+      "text": "01_Varzob",
+      "ci": 0,
+      "link": "https://drive.google.com/drive/folders/1kX9Hro88TwiuZFMygfxaDrG5g1eMiYT4?usp=drive_link",
+      "collapsed": false,
+      "isNote": false,
+      "fontSize": 13,
+      "fontFamily": "Nunito",
+      "textColor": "",
+      "bold": false,
+      "italic": false,
+      "textAlign": "left",
+      "shape": "rounded",
+      "borderColor": "",
+      "borderWidth": 0
+    },
+    {
+      "id": "n15",
+      "x": 1545.9140758744604,
+      "y": 283.4159825451867,
+      "w": 0,
+      "h": 0,
+      "text": "02_Vahdat",
+      "ci": 0,
+      "link": "https://drive.google.com/drive/folders/1S_rIYEwMDfRJgBqAAVjnjZyDELIjd1DV?usp=drive_link",
+      "collapsed": false,
+      "isNote": false,
+      "fontSize": 13,
+      "fontFamily": "Nunito",
+      "textColor": "",
+      "bold": false,
+      "italic": false,
+      "textAlign": "left",
+      "shape": "rounded",
+      "borderColor": "",
+      "borderWidth": 0
+    },
+    {
+      "id": "n16",
+      "x": 1528.412995465792,
+      "y": 423.4246258145311,
+      "w": 0,
+      "h": 0,
+      "text": "03_Faizobod",
+      "ci": 0,
+      "link": "https://drive.google.com/drive/folders/1Auf614uGEhdkvn-Ot03z9mc6bpn8fyZ3?usp=drive_link",
+      "collapsed": false,
+      "isNote": false,
+      "fontSize": 13,
+      "fontFamily": "Nunito",
+      "textColor": "",
+      "bold": false,
+      "italic": false,
+      "textAlign": "left",
+      "shape": "rounded",
+      "borderColor": "",
+      "borderWidth": 0
+    },
+    {
+      "id": "n20",
+      "x": 1309.0661210104856,
+      "y": 73.40301764116985,
+      "w": 324.9878994229176,
+      "h": 49.500648245200836,
+      "text": "STEP_2_WSN_25-09-07_Meeting_8_Jamoats_List_of_Measures_Protocols_final",
+      "ci": 0,
+      "link": "https://drive.google.com/drive/folders/1BE-I50O5RFLkWrX0Cg-TKttHmceUb0Ye?usp=drive_link",
+      "collapsed": false,
+      "isNote": false,
+      "fontSize": 13,
+      "fontFamily": "Nunito",
+      "textColor": "",
+      "bold": false,
+      "italic": false,
+      "textAlign": "left",
+      "shape": "rounded",
+      "borderColor": "#008000",
+      "borderWidth": 1
     }
   ],
   "edges": [
@@ -164,9 +248,34 @@
       "id": "e11",
       "from": "n5",
       "to": "n10"
+    },
+    {
+      "id": "e13",
+      "from": "n5",
+      "to": "n12"
+    },
+    {
+      "id": "e17",
+      "from": "n12",
+      "to": "n14"
+    },
+    {
+      "id": "e18",
+      "from": "n12",
+      "to": "n15"
+    },
+    {
+      "id": "e19",
+      "from": "n12",
+      "to": "n16"
+    },
+    {
+      "id": "e21",
+      "from": "n5",
+      "to": "n20"
     }
   ],
-  "nid": 13,
+  "nid": 22,
   "annotations": [
     {
       "id": "a8",
@@ -180,10 +289,10 @@
     },
     {
       "id": "a9",
-      "x1": 704.1499633789062,
-      "y1": 288.34999084472656,
-      "x2": 860.1499633789062,
-      "y2": 288.34999084472656,
+      "x1": 709.1499633789062,
+      "y1": 290.34999084472656,
+      "x2": 865.1499633789062,
+      "y2": 290.34999084472656,
       "color": "#c0392b",
       "hasArrow": true,
       "thickness": 2
