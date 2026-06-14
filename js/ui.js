@@ -193,6 +193,23 @@ function showEdgeEditBar(edgeId) {
   colorPick.value = edge.color || '#b0a89e';
   bar.appendChild(colorPick);
 
+  /* Clear-label button: removes edge.label, keeps the edge/line intact */
+  var clearBtn = document.createElement('button');
+  clearBtn.className = 'edge-label-clear';
+  clearBtn.innerHTML = '&times;';
+  clearBtn.title = 'Clear label';
+  clearBtn.addEventListener('click', function(e) {
+    e.stopPropagation();
+    if (!edge.label) return;            /* no-op when already empty */
+    edge.label = '';
+    input.value = '';
+    var hiddenIds = getHiddenNodeIds(mapData.nodes, mapData.edges);
+    renderAllEdges(edgeSvg, mapData.edges, mapData.nodes, nodeEls, hiddenIds);
+    selectEdge(edgeSvg, edgeId);         /* keep the edge highlighted */
+    pushUndo(); autoSave();
+  });
+  bar.appendChild(clearBtn);
+
   bar.style.left = screenX + 'px';
   bar.style.top = screenY + 'px';
   bar.style.transform = 'translate(-50%, -50%)';

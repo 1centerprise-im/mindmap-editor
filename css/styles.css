@@ -462,6 +462,8 @@ button { font-family: 'Nunito Sans', sans-serif; cursor: pointer; border: none; 
   width: 24px; height: 24px; padding: 1px;
   border: 1px solid var(--border); border-radius: 4px; cursor: pointer; background: #fff;
 }
+.edge-edit-bar .edge-label-clear { min-width: 22px; height: 22px; border: 1px solid var(--border); border-radius: 4px; font-size: 12px; display: flex; align-items: center; justify-content: center; cursor: pointer; color: var(--red); background: #fff; transition: background 0.12s; }
+.edge-edit-bar .edge-label-clear:hover { background: rgba(192,57,43,0.1); }
 
 /* --- Annotation edit bar (floating near selected annotation) --- */
 .ann-edit-bar {
