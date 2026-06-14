@@ -169,7 +169,7 @@ function attachNodeEvents(el, node) {
     if (e.target.closest('.node-link-icon')) return;
     e.stopPropagation();
     /* Deselect edge/annotation when clicking a node */
-    if (selectedEdge) { selectedEdge = null; deselectAllEdges(edgeSvg); hideEdgeEditBar(); }
+    if (selectedEdge) deselectEdge();
     if (selectedAnnotation) { selectedAnnotation = null; deselectAllAnnotations(); }
     /* Selection logic: Ctrl for multi, else single */
     if (e.ctrlKey || e.metaKey) {
@@ -275,7 +275,7 @@ function onCanvasDown(e) {
   }
   if (e.target.closest('.mm-node')) return;
   /* Deselect edge and annotation on canvas click */
-  if (selectedEdge) { selectedEdge = null; deselectAllEdges(edgeSvg); }
+  if (selectedEdge) deselectEdge();
   if (selectedAnnotation) { selectedAnnotation = null; deselectAllAnnotations(); }
   if (e.button === 1 || spaceDown) {
     isPanning = true; dragStart = {x:e.clientX,y:e.clientY};
@@ -432,6 +432,15 @@ function onEdgeClick(e) {
   showEdgeEditBar(selectedEdge);
 }
 
+/* --- Single source of truth for clearing edge selection ---
+   Every path that ends edge editing MUST route through here, so the floating
+   #edgeEditBar can never be left orphaned on document.body. */
+function deselectEdge() {
+  selectedEdge = null;
+  deselectAllEdges(edgeSvg);
+  hideEdgeEditBar();
+}
+
 /* --- Keyboard shortcuts --- */
 function onKeyDown(e) {
   if (e.target.tagName === 'TEXTAREA' || e.target.tagName === 'INPUT') return;
@@ -445,7 +454,7 @@ function onKeyDown(e) {
   }
   if (e.key === 'Escape') {
     selectedNodes.clear();
-    if (selectedEdge) { selectedEdge = null; deselectAllEdges(edgeSvg); hideEdgeEditBar(); }
+    if (selectedEdge) deselectEdge();
     if (selectedAnnotation) { selectedAnnotation = null; deselectAllAnnotations(); }
     if (drawMode) toggleDrawMode();
     updateSelectionVisuals(); hideFormatPanel();
@@ -478,8 +487,7 @@ function deleteNodes(singleId) {
     mapData.edges = deleteEdgesForNode(mapData.edges, id);
   });
   selectedNodes.clear();
-  if (selectedEdge) { selectedEdge = null; deselectAllEdges(edgeSvg); }
-  hideEdgeEditBar();
+  if (selectedEdge) deselectEdge();
   fullRender(); pushUndo(); autoSave();
 }
 function selectAll() { mapData.nodes.forEach(function(n) { selectedNodes.add(n.id); }); updateSelectionVisuals(); showFormatPanel(); }
@@ -682,7 +690,7 @@ function toggleDrawMode() {
     container.classList.add('draw-mode');
     /* Deselect everything */
     selectedNodes.clear(); updateSelectionVisuals(); hideFormatPanel();
-    if (selectedEdge) { selectedEdge = null; deselectAllEdges(edgeSvg); hideEdgeEditBar(); }
+    if (selectedEdge) deselectEdge();
   } else {
     btn.classList.remove('draw-active');
     bar.classList.remove('visible');
@@ -834,7 +842,7 @@ function onAnnotationClick(e) {
 /* --- Select an annotation by id (shared by mousedown and click paths) --- */
 function selectAnnotationById(annId) {
   selectedNodes.clear(); updateSelectionVisuals(); hideFormatPanel();
-  if (selectedEdge) { selectedEdge = null; deselectAllEdges(edgeSvg); }
+  if (selectedEdge) deselectEdge();
   selectedAnnotation = annId;
   deselectAllAnnotations();
   var line = annSvg.querySelector('.ann-line[data-ann-id="' + annId + '"]');
