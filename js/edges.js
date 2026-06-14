@@ -29,12 +29,48 @@ function renderAllEdges(svg, edges, nodes, nodeEls, hiddenIds) {
     var from = getNodeCenter(fromNode, fromEl);
     var to = getNodeCenter(toNode, toEl);
 
-    /* Simple bezier curve - fixed gray color and 1.5px width */
-    svg.appendChild(makeBezierPath(from, to, 1.5, '#b0a89e', edge.id));
+    /* Bezier curve - per-edge color override, default gray, 1.5px width */
+    svg.appendChild(makeBezierPath(from, to, 1.5, edge.color || '#b0a89e', edge.id));
 
     /* Wider invisible hit area for click selection */
     svg.appendChild(makeHitArea(from, to, edge.id));
+
+    /* Optional label rendered at midpoint */
+    if (edge.label) svg.appendChild(makeEdgeLabel(from, to, edge.label, edge.id));
   });
+}
+
+/* --- Edge label: rect background + text at midpoint, clickable to select --- */
+function makeEdgeLabel(from, to, label, edgeId) {
+  var g = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+  g.setAttribute('class', 'edge-label');
+  g.dataset.edgeId = edgeId;
+  g.style.cursor = 'text';
+  var mx = (from.x + to.x) / 2;
+  var my = (from.y + to.y) / 2;
+  var w = Math.max(label.length * 6.5 + 12, 22);
+  var rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+  rect.setAttribute('x', mx - w / 2);
+  rect.setAttribute('y', my - 9);
+  rect.setAttribute('width', w);
+  rect.setAttribute('height', 18);
+  rect.setAttribute('rx', 4);
+  rect.setAttribute('fill', '#fdfaf4');
+  rect.setAttribute('stroke', '#d4cbbe');
+  rect.setAttribute('stroke-width', '1');
+  g.appendChild(rect);
+  var text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+  text.setAttribute('x', mx);
+  text.setAttribute('y', my);
+  text.setAttribute('text-anchor', 'middle');
+  text.setAttribute('dominant-baseline', 'central');
+  text.setAttribute('font-family', 'Nunito Sans, sans-serif');
+  text.setAttribute('font-size', '11');
+  text.setAttribute('font-weight', '600');
+  text.setAttribute('fill', '#2a2520');
+  text.textContent = label;
+  g.appendChild(text);
+  return g;
 }
 
 /* --- Draw a collapse badge below a node (called from editor.js) --- */

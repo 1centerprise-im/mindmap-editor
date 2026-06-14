@@ -445,6 +445,24 @@ button { font-family: 'Nunito Sans', sans-serif; cursor: pointer; border: none; 
 .draw-arrow-toggle { font-size: 14px; min-width: 28px; padding: 2px 6px; border-radius: 4px; border: 1px solid var(--border); }
 .draw-arrow-toggle.active { background: var(--accent); color: #fff; border-color: var(--accent); }
 
+/* --- Edge edit bar (label input + color picker at edge midpoint) --- */
+.edge-edit-bar {
+  position: fixed; z-index: 100;
+  display: flex; align-items: center; gap: 6px;
+  background: #fdfaf4; border: 1px solid #d4cbbe; border-radius: 6px;
+  padding: 4px 6px; box-shadow: 0 3px 12px rgba(0,0,0,0.12);
+}
+.edge-edit-bar .edge-label-input {
+  width: 120px; border: 1px solid transparent; background: transparent;
+  font: 600 12px 'Nunito Sans', sans-serif; color: #2a2520;
+  padding: 3px 6px; border-radius: 4px; outline: none;
+}
+.edge-edit-bar .edge-label-input:focus { border-color: var(--accent); background: #fff; }
+.edge-edit-bar .edge-color-pick {
+  width: 24px; height: 24px; padding: 1px;
+  border: 1px solid var(--border); border-radius: 4px; cursor: pointer; background: #fff;
+}
+
 /* --- Annotation edit bar (floating near selected annotation) --- */
 .ann-edit-bar {
   position: absolute; z-index: 50;

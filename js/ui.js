@@ -159,6 +159,78 @@ function onContextMenu(e) {
   ctxMenu.classList.add('visible');
 }
 
+/* --- Edge edit bar: floating label input + color picker at edge midpoint --- */
+function showEdgeEditBar(edgeId) {
+  hideEdgeEditBar();
+  if (!edgeId) return;
+  var edge = mapData.edges.find(function(e) { return e.id === edgeId; });
+  if (!edge) return;
+  var fromNode = mapData.nodes.find(function(n) { return n.id === edge.from; });
+  var toNode = mapData.nodes.find(function(n) { return n.id === edge.to; });
+  if (!fromNode || !toNode) return;
+  var from = getNodeCenter(fromNode, nodeEls[edge.from]);
+  var to = getNodeCenter(toNode, nodeEls[edge.to]);
+  var mx = (from.x + to.x) / 2, my = (from.y + to.y) / 2;
+  var rect = container.getBoundingClientRect();
+  var screenX = mx * zoom + panX + rect.left;
+  var screenY = my * zoom + panY + rect.top;
+
+  var bar = document.createElement('div');
+  bar.id = 'edgeEditBar';
+  bar.className = 'edge-edit-bar';
+
+  var input = document.createElement('input');
+  input.type = 'text';
+  input.className = 'edge-label-input';
+  input.placeholder = 'label';
+  input.value = edge.label || '';
+  bar.appendChild(input);
+
+  var colorPick = document.createElement('input');
+  colorPick.type = 'color';
+  colorPick.className = 'edge-color-pick';
+  colorPick.title = 'Edge color';
+  colorPick.value = edge.color || '#b0a89e';
+  bar.appendChild(colorPick);
+
+  bar.style.left = screenX + 'px';
+  bar.style.top = screenY + 'px';
+  bar.style.transform = 'translate(-50%, -50%)';
+  document.body.appendChild(bar);
+
+  bar.addEventListener('mousedown', function(e) { e.stopPropagation(); });
+
+  input.addEventListener('blur', function() {
+    var v = input.value.trim();
+    if ((edge.label || '') === v) return;
+    edge.label = v;
+    var hiddenIds = getHiddenNodeIds(mapData.nodes, mapData.edges);
+    renderAllEdges(edgeSvg, mapData.edges, mapData.nodes, nodeEls, hiddenIds);
+    selectEdge(edgeSvg, edgeId);
+    pushUndo(); autoSave();
+  });
+  input.addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') { e.preventDefault(); input.blur(); }
+    else if (e.key === 'Escape') { input.value = edge.label || ''; input.blur(); }
+    e.stopPropagation();
+  });
+
+  colorPick.addEventListener('input', function() {
+    edge.color = colorPick.value;
+    var hiddenIds = getHiddenNodeIds(mapData.nodes, mapData.edges);
+    renderAllEdges(edgeSvg, mapData.edges, mapData.nodes, nodeEls, hiddenIds);
+    selectEdge(edgeSvg, edgeId);
+  });
+  colorPick.addEventListener('change', function() { pushUndo(); autoSave(); });
+
+  setTimeout(function() { input.focus(); input.select(); }, 0);
+}
+
+function hideEdgeEditBar() {
+  var old = document.getElementById('edgeEditBar');
+  if (old) old.remove();
+}
+
 /* --- Unsaved changes modal --- */
 function showUnsavedModal() {
   var old = document.getElementById('unsavedModal');

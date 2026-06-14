@@ -169,7 +169,7 @@ function attachNodeEvents(el, node) {
     if (e.target.closest('.node-link-icon')) return;
     e.stopPropagation();
     /* Deselect edge/annotation when clicking a node */
-    if (selectedEdge) { selectedEdge = null; deselectAllEdges(edgeSvg); }
+    if (selectedEdge) { selectedEdge = null; deselectAllEdges(edgeSvg); hideEdgeEditBar(); }
     if (selectedAnnotation) { selectedAnnotation = null; deselectAllAnnotations(); }
     /* Selection logic: Ctrl for multi, else single */
     if (e.ctrlKey || e.metaKey) {
@@ -220,6 +220,16 @@ function setupEvents() {
     if (hasUnsavedChanges) { e.preventDefault(); }
   });
   edgeSvg.addEventListener('click', onEdgeClick);
+  edgeSvg.addEventListener('dblclick', function(e) {
+    var label = e.target.closest('.edge-label');
+    if (!label) return;
+    e.stopPropagation();
+    selectedNodes.clear(); updateSelectionVisuals(); hideFormatPanel();
+    if (selectedAnnotation) { selectedAnnotation = null; deselectAllAnnotations(); }
+    selectedEdge = label.dataset.edgeId;
+    selectEdge(edgeSvg, selectedEdge);
+    showEdgeEditBar(selectedEdge);
+  });
   annSvg.addEventListener('click', onAnnotationClick);
   setupToolbar();
   setupFormatPanel();
@@ -412,13 +422,14 @@ function endRubberBand() {
 
 /* --- Edge click handler (delegated from SVG) --- */
 function onEdgeClick(e) {
-  var hit = e.target.closest('.edge-hit');
+  var hit = e.target.closest('.edge-hit') || e.target.closest('.edge-label');
   if (!hit) return;
   e.stopPropagation();
   selectedNodes.clear(); updateSelectionVisuals(); hideFormatPanel();
   if (selectedAnnotation) { selectedAnnotation = null; deselectAllAnnotations(); }
   selectedEdge = hit.dataset.edgeId;
   selectEdge(edgeSvg, selectedEdge);
+  showEdgeEditBar(selectedEdge);
 }
 
 /* --- Keyboard shortcuts --- */
@@ -434,7 +445,7 @@ function onKeyDown(e) {
   }
   if (e.key === 'Escape') {
     selectedNodes.clear();
-    if (selectedEdge) { selectedEdge = null; deselectAllEdges(edgeSvg); }
+    if (selectedEdge) { selectedEdge = null; deselectAllEdges(edgeSvg); hideEdgeEditBar(); }
     if (selectedAnnotation) { selectedAnnotation = null; deselectAllAnnotations(); }
     if (drawMode) toggleDrawMode();
     updateSelectionVisuals(); hideFormatPanel();
@@ -453,6 +464,7 @@ function deleteSelection() {
   if (selectedEdge) {
     mapData.edges = deleteEdgeById(mapData.edges, selectedEdge);
     selectedEdge = null;
+    hideEdgeEditBar();
     fullRender(); pushUndo(); autoSave();
     showToast('Connection removed');
     return;
@@ -649,7 +661,7 @@ function undo() {
   if (undoStack.length < 2) return;
   undoStack.pop(); mapData = JSON.parse(undoStack[undoStack.length - 1]);
   if (!mapData.annotations) mapData.annotations = [];
-  selectedNodes.clear(); selectedEdge = null; selectedAnnotation = null; fullRender(); hideFormatPanel();
+  selectedNodes.clear(); selectedEdge = null; selectedAnnotation = null; fullRender(); hideFormatPanel(); hideEdgeEditBar();
 }
 
 /* ============================================================
@@ -667,7 +679,7 @@ function toggleDrawMode() {
     container.classList.add('draw-mode');
     /* Deselect everything */
     selectedNodes.clear(); updateSelectionVisuals(); hideFormatPanel();
-    if (selectedEdge) { selectedEdge = null; deselectAllEdges(edgeSvg); }
+    if (selectedEdge) { selectedEdge = null; deselectAllEdges(edgeSvg); hideEdgeEditBar(); }
   } else {
     btn.classList.remove('draw-active');
     bar.classList.remove('visible');
