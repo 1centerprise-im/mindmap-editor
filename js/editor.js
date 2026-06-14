@@ -477,7 +477,10 @@ function deleteNodes(singleId) {
     mapData.nodes = mapData.nodes.filter(function(n) { return n.id !== id; });
     mapData.edges = deleteEdgesForNode(mapData.edges, id);
   });
-  selectedNodes.clear(); fullRender(); pushUndo(); autoSave();
+  selectedNodes.clear();
+  if (selectedEdge) { selectedEdge = null; deselectAllEdges(edgeSvg); }
+  hideEdgeEditBar();
+  fullRender(); pushUndo(); autoSave();
 }
 function selectAll() { mapData.nodes.forEach(function(n) { selectedNodes.add(n.id); }); updateSelectionVisuals(); showFormatPanel(); }
 function addNodeAtCenter() {
