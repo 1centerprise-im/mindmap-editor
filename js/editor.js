@@ -170,7 +170,7 @@ function attachNodeEvents(el, node) {
     e.stopPropagation();
     /* Deselect edge/annotation when clicking a node */
     if (selectedEdge) deselectEdge();
-    if (selectedAnnotation) { selectedAnnotation = null; deselectAllAnnotations(); }
+    if (selectedAnnotation) deselectAnnotation();
     /* Selection logic: Ctrl for multi, else single */
     if (e.ctrlKey || e.metaKey) {
       selectedNodes.has(node.id) ? selectedNodes.delete(node.id) : selectedNodes.add(node.id);
@@ -225,7 +225,7 @@ function setupEvents() {
     if (!label) return;
     e.stopPropagation();
     selectedNodes.clear(); updateSelectionVisuals(); hideFormatPanel();
-    if (selectedAnnotation) { selectedAnnotation = null; deselectAllAnnotations(); }
+    if (selectedAnnotation) deselectAnnotation();
     selectedEdge = label.dataset.edgeId;
     selectEdge(edgeSvg, selectedEdge);
     showEdgeEditBar(selectedEdge);
@@ -276,7 +276,7 @@ function onCanvasDown(e) {
   if (e.target.closest('.mm-node')) return;
   /* Deselect edge and annotation on canvas click */
   if (selectedEdge) deselectEdge();
-  if (selectedAnnotation) { selectedAnnotation = null; deselectAllAnnotations(); }
+  if (selectedAnnotation) deselectAnnotation();
   if (e.button === 1 || spaceDown) {
     isPanning = true; dragStart = {x:e.clientX,y:e.clientY};
     panStart = {x:panX,y:panY}; container.classList.add('panning');
@@ -426,7 +426,7 @@ function onEdgeClick(e) {
   if (!hit) return;
   e.stopPropagation();
   selectedNodes.clear(); updateSelectionVisuals(); hideFormatPanel();
-  if (selectedAnnotation) { selectedAnnotation = null; deselectAllAnnotations(); }
+  if (selectedAnnotation) deselectAnnotation();
   selectedEdge = hit.dataset.edgeId;
   selectEdge(edgeSvg, selectedEdge);
   showEdgeEditBar(selectedEdge);
@@ -439,6 +439,14 @@ function deselectEdge() {
   selectedEdge = null;
   deselectAllEdges(edgeSvg);
   hideEdgeEditBar();
+}
+
+/* --- Single source of truth for clearing annotation selection ---
+   Mirrors deselectEdge(): deselectAllAnnotations() already hides the
+   #annEditBar card via hideAnnEditBar(), so no path can leave it orphaned. */
+function deselectAnnotation() {
+  selectedAnnotation = null;
+  deselectAllAnnotations();
 }
 
 /* --- Keyboard shortcuts --- */
@@ -455,7 +463,7 @@ function onKeyDown(e) {
   if (e.key === 'Escape') {
     selectedNodes.clear();
     if (selectedEdge) deselectEdge();
-    if (selectedAnnotation) { selectedAnnotation = null; deselectAllAnnotations(); }
+    if (selectedAnnotation) deselectAnnotation();
     if (drawMode) toggleDrawMode();
     updateSelectionVisuals(); hideFormatPanel();
   }
@@ -465,7 +473,7 @@ function onKeyDown(e) {
 function deleteSelection() {
   if (selectedAnnotation) {
     mapData.annotations = mapData.annotations.filter(function(a) { return a.id !== selectedAnnotation; });
-    selectedAnnotation = null;
+    deselectAnnotation();
     fullRender(); pushUndo(); autoSave();
     showToast('Drawing removed');
     return;
@@ -672,7 +680,7 @@ function undo() {
   if (undoStack.length < 2) return;
   undoStack.pop(); mapData = JSON.parse(undoStack[undoStack.length - 1]);
   if (!mapData.annotations) mapData.annotations = [];
-  selectedNodes.clear(); selectedEdge = null; selectedAnnotation = null; fullRender(); hideFormatPanel(); hideEdgeEditBar();
+  selectedNodes.clear(); selectedEdge = null; deselectAnnotation(); fullRender(); hideFormatPanel(); hideEdgeEditBar();
 }
 
 /* ============================================================
@@ -691,6 +699,7 @@ function toggleDrawMode() {
     /* Deselect everything */
     selectedNodes.clear(); updateSelectionVisuals(); hideFormatPanel();
     if (selectedEdge) deselectEdge();
+    if (selectedAnnotation) deselectAnnotation();
   } else {
     btn.classList.remove('draw-active');
     bar.classList.remove('visible');
@@ -1003,8 +1012,7 @@ function showAnnEditBar() {
   delBtn.addEventListener('click', function(e) {
     e.stopPropagation();
     mapData.annotations = mapData.annotations.filter(function(a) { return a.id !== selectedAnnotation; });
-    selectedAnnotation = null;
-    hideAnnEditBar();
+    deselectAnnotation();
     fullRender(); pushUndo(); autoSave();
     showToast('Drawing removed');
   });
