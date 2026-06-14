@@ -718,6 +718,10 @@ button { font-family: 'Nunito Sans', sans-serif; cursor: pointer; border: none; 
 .project-row[draggable="true"]:active {
   cursor: grabbing;
 }
+.project-row .col-name,
+.project-row .col-name * {
+  cursor: default;
+}
 
 /* ===== ROOT DROP ZONE ===== */
 .root-drop-zone {
