@@ -87,8 +87,8 @@
     },
     {
       "id": "n6",
-      "x": 368.55533349729416,
-      "y": 377.83723136335783,
+      "x": 354.4258395675116,
+      "y": 390.3967815231645,
       "w": 0,
       "h": 0,
       "text": "03_Materials",
@@ -108,8 +108,8 @@
     },
     {
       "id": "n7",
-      "x": 588.6396150596918,
-      "y": 372.72174252096494,
+      "x": 593.3494463696193,
+      "y": 400.98073038052996,
       "w": 0,
       "h": 0,
       "text": "02_Project_Documents",
@@ -145,8 +145,8 @@
       "italic": false,
       "textAlign": "left",
       "shape": "rounded",
-      "borderColor": "",
-      "borderWidth": 0
+      "borderColor": "#8692fb",
+      "borderWidth": 2
     },
     {
       "id": "n13",
@@ -376,13 +376,13 @@
       "italic": false,
       "textAlign": "left",
       "shape": "rounded",
-      "borderColor": "",
-      "borderWidth": 0
+      "borderColor": "#8692fb",
+      "borderWidth": 2
     },
     {
       "id": "n28",
-      "x": 386.77204923573856,
-      "y": 13.245692157804655,
+      "x": 739.6357828967988,
+      "y": -206.4149667658795,
       "w": 0,
       "h": 0,
       "text": "Doc",
@@ -397,8 +397,8 @@
       "italic": false,
       "textAlign": "left",
       "shape": "rounded",
-      "borderColor": "",
-      "borderWidth": 0
+      "borderColor": "#8692fb",
+      "borderWidth": 2
     },
     {
       "id": "n30",
