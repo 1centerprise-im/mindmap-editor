@@ -136,10 +136,24 @@ async function loadMap(folder, mapName) {
   return await res.json();
 }
 
-// Save map to GitHub
+// Save map to GitHub, then sync its display name in index.json
 async function saveMap(folder, mapName, mapData) {
   const json = JSON.stringify(mapData, null, 2);
   await ghPut(`maps/${folder}/${mapName}.json`, json, `Update ${mapName} via Mind Map Editor`);
+  if (mapData.title) await _updateMapNameInIndex(folder, mapName, mapData.title);
+}
+
+// Update the map's name field in index.json if it has changed
+async function _updateMapNameInIndex(folder, mapId, newName) {
+  const result = await ghGet('maps/index.json');
+  if (!result) return;
+  const index = JSON.parse(result.content);
+  const folderEntry = index.folders.find(f => f.name === folder);
+  if (!folderEntry) return;
+  const mapEntry = folderEntry.maps.find(m => m.id === mapId);
+  if (!mapEntry || mapEntry.name === newName) return;
+  mapEntry.name = newName;
+  await ghPut('maps/index.json', JSON.stringify(index, null, 2), `Update ${mapId} name via Mind Map Editor`);
 }
 
 // Load index.json - try GitHub API first (always fresh), fallback to static
