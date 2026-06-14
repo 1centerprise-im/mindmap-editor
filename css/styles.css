@@ -271,6 +271,21 @@ button { font-family: 'Nunito Sans', sans-serif; cursor: pointer; border: none; 
   font-size: 0.85rem;
   font-weight: 600;
 }
+.project-row .num-input {
+  width: 100%;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  padding: 4px 6px;
+  color: inherit;
+  font: inherit;
+  font-weight: 600;
+  cursor: text;
+  transition: border-color 0.15s, background 0.15s;
+}
+.project-row .num-input::placeholder { color: var(--dk-muted); opacity: 0.5; }
+.project-row .num-input:hover { border-color: var(--dk-border); }
+.project-row .num-input:focus { outline: none; border-color: var(--dk-gold); background: rgba(255,255,255,0.04); }
 
 .project-name-text {
   font-weight: 700;

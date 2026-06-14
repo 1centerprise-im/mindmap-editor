@@ -212,7 +212,7 @@ function renderMapsTable(folderName, search, statusVal) {
 
     var viewUrl = getMapViewUrl(item.folder, m.id);
     tr.innerHTML =
-      '<td class="col-num">' + esc(m.number || '') + '</td>' +
+      '<td class="col-num"><input type="text" class="num-input" draggable="false" value="' + esc(m.number || '') + '" placeholder="#" title="Click to edit number"></td>' +
       '<td class="col-name"><span class="project-name-text">' + esc(m.name) + '</span>' + folderTag + '</td>' +
       '<td class="col-status">' + statusHtml + '</td>' +
       '<td class="col-action">' +
@@ -240,8 +240,22 @@ function renderMapsTable(folderName, search, statusVal) {
     tr.addEventListener('click', function(e) {
       if (e.target.tagName === 'A' || e.target.closest('.status-badge') ||
           e.target.closest('.status-dropdown') || e.target.closest('.delete-btn') ||
-          e.target.closest('.share-btn')) return;
+          e.target.closest('.share-btn') || e.target.closest('.num-input')) return;
       window.location.href = 'editor.html?folder=' + encodeURIComponent(item.folder) + '&map=' + encodeURIComponent(m.id);
+    });
+
+    // Inline number editing
+    var numInput = tr.querySelector('.num-input');
+    numInput.addEventListener('mousedown', function(e) { e.stopPropagation(); });
+    numInput.addEventListener('click', function(e) { e.stopPropagation(); });
+    numInput.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') { e.preventDefault(); numInput.blur(); }
+      if (e.key === 'Escape') { numInput.value = m.number || ''; numInput.blur(); }
+    });
+    numInput.addEventListener('blur', function() {
+      var newNum = numInput.value.trim();
+      if (newNum === (m.number || '')) return;
+      changeNumber(item.folder, m.id, newNum);
     });
 
     // Drag start
@@ -416,6 +430,23 @@ function showStatusDropdown(badge) {
       document.removeEventListener('click', closeDD);
     }, { once: true });
   }, 10);
+}
+
+async function changeNumber(folderName, projectId, newNumber) {
+  indexData.folders.forEach(function(f) {
+    if (f.name === folderName) {
+      f.maps.forEach(function(m) {
+        if (m.id === projectId) m.number = newNumber;
+      });
+    }
+  });
+  showHomeToast('Saving...');
+  try {
+    await saveIndex(indexData);
+    showHomeToast('Number updated');
+  } catch (err) {
+    showHomeToast('Failed: ' + err.message, true);
+  }
 }
 
 async function changeStatus(folderName, projectId, newStatus) {

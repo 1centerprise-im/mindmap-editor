@@ -17,6 +17,7 @@ var isDraggingAnn = false;
 var selectedAnnotation = null;
 var drawColor = '#c0392b', drawArrow = true;
 var dragStart = {x:0,y:0}, panStart = {x:0,y:0};
+var nodeClipboard = null;
 var canvas, edgeSvg, annSvg, container, formatPanel, zoomBadge, ctxMenu;
 
 /* Convert mouse event to canvas coordinates */
@@ -427,6 +428,10 @@ function onKeyDown(e) {
   if (e.key === 'Delete' || e.key === 'Backspace') deleteSelection();
   if (e.ctrlKey && e.key === 'z') { undo(); e.preventDefault(); }
   if (e.ctrlKey && e.key === 'a') { selectAll(); e.preventDefault(); }
+  if ((e.ctrlKey || e.metaKey) && e.key === 'c') { copyNodes(); }
+  if ((e.ctrlKey || e.metaKey) && e.key === 'v' && nodeClipboard && nodeClipboard.length) {
+    pasteNodes(); e.preventDefault();
+  }
   if (e.key === 'Escape') {
     selectedNodes.clear();
     if (selectedEdge) { selectedEdge = null; deselectAllEdges(edgeSvg); }
@@ -475,6 +480,49 @@ function addChild(parent, isNote) {
   mapData.edges.push(createEdgeData(eid, parent.id, id));
   fullRender(); pushUndo(); autoSave();
 }
+function duplicateNode(node) {
+  var copy = JSON.parse(JSON.stringify(node));
+  copy.id = 'n' + (mapData.nid++);
+  copy.x = node.x + 20;
+  copy.y = node.y + 20;
+  copy.collapsed = false;
+  mapData.nodes.push(copy);
+  selectedNodes.clear();
+  selectedNodes.add(copy.id);
+  fullRender();
+  updateSelectionVisuals(); showFormatPanel();
+  pushUndo(); autoSave();
+}
+
+function copyNodes() {
+  if (!selectedNodes.size) return;
+  nodeClipboard = Array.from(selectedNodes).map(function(id) {
+    var n = mapData.nodes.find(function(nd) { return nd.id === id; });
+    return n ? JSON.parse(JSON.stringify(n)) : null;
+  }).filter(Boolean);
+  if (nodeClipboard.length) {
+    showToast(nodeClipboard.length + ' node' + (nodeClipboard.length > 1 ? 's' : '') + ' copied');
+  }
+}
+
+function pasteNodes() {
+  if (!nodeClipboard || !nodeClipboard.length) return;
+  selectedNodes.clear();
+  nodeClipboard.forEach(function(src) {
+    var copy = JSON.parse(JSON.stringify(src));
+    copy.id = 'n' + (mapData.nid++);
+    copy.x = src.x + 20;
+    copy.y = src.y + 20;
+    copy.collapsed = false;
+    mapData.nodes.push(copy);
+    selectedNodes.add(copy.id);
+    src.x += 20; src.y += 20;
+  });
+  fullRender();
+  updateSelectionVisuals(); showFormatPanel();
+  pushUndo(); autoSave();
+}
+
 /* Toggle collapse: hide/show ALL children at once */
 function toggleCollapse(node) {
   node.collapsed = !node.collapsed;

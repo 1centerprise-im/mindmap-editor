@@ -125,6 +125,7 @@ function onContextMenu(e) {
     var node = mapData.nodes.find(function(n) { return n.id === nodeEl.dataset.id; });
     ctxMenu.innerHTML =
       '<div class="ctx-item" data-action="add-child">Add Child</div>' +
+      '<div class="ctx-item" data-action="duplicate">Duplicate</div>' +
       '<div class="ctx-item" data-action="add-note">Add Note</div>' +
       '<div class="ctx-sep"></div>' +
       '<div class="ctx-item" data-action="attach-link">Attach Link</div>' +
@@ -134,6 +135,7 @@ function onContextMenu(e) {
     ctxMenu.onclick = function(ev) {
       var action = ev.target.dataset.action;
       if (action === 'add-child') addChild(node);
+      else if (action === 'duplicate') duplicateNode(node);
       else if (action === 'add-note') addChild(node, true);
       else if (action === 'attach-link') { var u = prompt('Enter URL:'); if (u) { node.link = u; fullRender(); autoSave(); } }
       else if (action === 'remove-link') { node.link = ''; fullRender(); autoSave(); }
@@ -189,7 +191,7 @@ function showUnsavedModal() {
       await saveMap(folder, mapName, mapData);
       hasUnsavedChanges = false;
       showToast('Saved to GitHub');
-      window.location.href = 'projects.html';
+      window.location.href = folder ? 'projects.html?folder=' + encodeURIComponent(folder) : 'projects.html';
     } catch (err) {
       btn.disabled = false;
       btn.textContent = 'Save and Leave';
@@ -207,7 +209,7 @@ function setupToolbar() {
     if (hasUnsavedChanges) {
       showUnsavedModal();
     } else {
-      window.location.href = 'projects.html';
+      window.location.href = folder ? 'projects.html?folder=' + encodeURIComponent(folder) : 'projects.html';
     }
   });
   document.getElementById('btnAddNode').addEventListener('click', addNodeAtCenter);
