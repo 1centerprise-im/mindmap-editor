@@ -759,8 +759,8 @@
     },
     {
       "id": "n103",
-      "x": -201.92589062662034,
-      "y": 192.31954624138982,
+      "x": -204.8895926528815,
+      "y": 299.87424412554446,
       "w": 0,
       "h": 0,
       "text": "Data_from_Tajik_Agencies",
@@ -780,8 +780,8 @@
     },
     {
       "id": "n104",
-      "x": -230.69213345159284,
-      "y": 339.33787478122684,
+      "x": -212.55048344612464,
+      "y": 391.17116051113595,
       "w": 0,
       "h": 0,
       "text": "Syrdarya_Basin_Mgt_Plan_2026_2030",
@@ -819,6 +819,48 @@
       "shape": "circle",
       "borderColor": "#008000",
       "borderWidth": 3
+    },
+    {
+      "id": "n111",
+      "x": -444.654484710203,
+      "y": 127.65292060673082,
+      "w": 0,
+      "h": 0,
+      "text": "07_REPORT",
+      "ci": 4,
+      "link": "https://drive.google.com/drive/folders/1lIVIM-SFFeFTzXB3SQBq7ZQRGjVk6gDx?usp=drive_link",
+      "collapsed": false,
+      "isNote": false,
+      "fontSize": 13,
+      "fontFamily": "Nunito",
+      "textColor": "",
+      "bold": false,
+      "italic": false,
+      "textAlign": "left",
+      "shape": "rounded",
+      "borderColor": "",
+      "borderWidth": 0
+    },
+    {
+      "id": "n114",
+      "x": -729.0075389049883,
+      "y": 90.8512956476271,
+      "w": 0,
+      "h": 0,
+      "text": "Docs_for_references",
+      "ci": 0,
+      "link": "https://drive.google.com/drive/folders/1z4kxDzGy8nvfsFLBy08SUVTHgOkZiS6b?usp=drive_link",
+      "collapsed": false,
+      "isNote": false,
+      "fontSize": 13,
+      "fontFamily": "Nunito",
+      "textColor": "",
+      "bold": false,
+      "italic": false,
+      "textAlign": "left",
+      "shape": "rounded",
+      "borderColor": "",
+      "borderWidth": 0
     }
   ],
   "edges": [
@@ -991,9 +1033,21 @@
       "id": "e110",
       "from": "n61",
       "to": "n107"
+    },
+    {
+      "id": "e112",
+      "from": "n1",
+      "to": "n111",
+      "color": "#00ff00"
+    },
+    {
+      "id": "e116",
+      "from": "n111",
+      "to": "n114",
+      "color": "#008000"
     }
   ],
-  "nid": 111,
+  "nid": 117,
   "annotations": [
     {
       "id": "a22",
