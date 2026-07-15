@@ -320,8 +320,8 @@
       "id": "n37",
       "x": 881.049006811212,
       "y": 442.0076640118134,
-      "w": 80,
-      "h": 40,
+      "w": 0,
+      "h": 0,
       "text": "D4",
       "ci": 4,
       "link": "https://drive.google.com/drive/folders/1q9LUncBJ0l2zG513gfP5A9LP0c6mqETl?usp=drive_link",
@@ -421,7 +421,7 @@
       "to": "n28"
     }
   ],
-  "nid": 42,
+  "nid": 43,
   "annotations": [
     {
       "id": "a8",
