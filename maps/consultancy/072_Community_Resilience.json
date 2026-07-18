@@ -315,6 +315,69 @@
       "shape": "rounded",
       "borderColor": "",
       "borderWidth": 0
+    },
+    {
+      "id": "n50",
+      "x": -263.19326447556364,
+      "y": 298.2596937629204,
+      "w": 0,
+      "h": 0,
+      "text": "Bonuvoni Khatlon",
+      "ci": 0,
+      "link": "https://drive.google.com/drive/folders/1BvWTsQzJy80fLcqF4fUskSYZU7V_CZsG?usp=drive_link",
+      "collapsed": false,
+      "isNote": false,
+      "fontSize": 13,
+      "fontFamily": "Nunito",
+      "textColor": "",
+      "bold": false,
+      "italic": false,
+      "textAlign": "left",
+      "shape": "rounded",
+      "borderColor": "",
+      "borderWidth": 0
+    },
+    {
+      "id": "n51",
+      "x": 85.88229172730377,
+      "y": 113.24272757172051,
+      "w": 0,
+      "h": 0,
+      "text": "New Node",
+      "ci": 0,
+      "link": "",
+      "collapsed": false,
+      "isNote": false,
+      "fontSize": 13,
+      "fontFamily": "Nunito",
+      "textColor": "",
+      "bold": false,
+      "italic": false,
+      "textAlign": "left",
+      "shape": "rounded",
+      "borderColor": "",
+      "borderWidth": 0
+    },
+    {
+      "id": "n53",
+      "x": 85.88229172730377,
+      "y": 113.24272757172051,
+      "w": 0,
+      "h": 0,
+      "text": "New Node",
+      "ci": 0,
+      "link": "",
+      "collapsed": false,
+      "isNote": false,
+      "fontSize": 13,
+      "fontFamily": "Nunito",
+      "textColor": "",
+      "bold": false,
+      "italic": false,
+      "textAlign": "left",
+      "shape": "rounded",
+      "borderColor": "",
+      "borderWidth": 0
     }
   ],
   "edges": [
@@ -382,9 +445,24 @@
       "id": "e49",
       "from": "n40",
       "to": "n48"
+    },
+    {
+      "id": "e52",
+      "from": "n39",
+      "to": "n51"
+    },
+    {
+      "id": "e54",
+      "from": "n39",
+      "to": "n53"
+    },
+    {
+      "id": "e55",
+      "from": "n39",
+      "to": "n50"
     }
   ],
-  "nid": 50,
+  "nid": 56,
   "edgeThickness": 2,
   "edgeColor": "#b8b0a6",
   "annotations": []
