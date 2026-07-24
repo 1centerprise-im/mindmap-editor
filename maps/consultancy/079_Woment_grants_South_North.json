@@ -23,14 +23,14 @@
       "borderWidth": 0
     },
     {
-      "id": "n2",
-      "x": 440.70001220703125,
-      "y": 265.5,
+      "id": "n6",
+      "x": 486,
+      "y": 268,
       "w": 0,
       "h": 0,
-      "text": "01_ProDocs_for_proposal_writting",
-      "ci": 0,
-      "link": "https://drive.google.com/drive/folders/1jkRLBBVtRVe56Qrcbhbm7jMNsIJoh4a2?usp=drive_link",
+      "text": "Evaluation",
+      "ci": 4,
+      "link": "https://drive.google.com/drive/folders/1VywTu6lD_EIDoRxUtAg0LpG5llNoMtjv?usp=drive_link",
       "collapsed": false,
       "isNote": false,
       "fontSize": 13,
@@ -40,43 +40,17 @@
       "italic": false,
       "textAlign": "left",
       "shape": "rounded",
-      "borderColor": "#008000",
-      "borderWidth": 2
-    },
-    {
-      "id": "n4",
-      "x": 496.70001220703125,
-      "y": 474.3000030517578,
-      "w": 0,
-      "h": 0,
-      "text": "_Materials",
-      "ci": 0,
-      "link": "https://drive.google.com/drive/folders/1S9mJRuEo1bcLoJkcKMPFSM4Wv5lW6rxp?usp=drive_link",
-      "collapsed": false,
-      "isNote": false,
-      "fontSize": 13,
-      "fontFamily": "Nunito",
-      "textColor": "",
-      "bold": false,
-      "italic": false,
-      "textAlign": "left",
-      "shape": "rounded",
-      "borderColor": "#008000",
-      "borderWidth": 2
+      "borderColor": "",
+      "borderWidth": 0
     }
   ],
   "edges": [
     {
-      "id": "e3",
+      "id": "e7",
       "from": "n1",
-      "to": "n2"
-    },
-    {
-      "id": "e5",
-      "from": "n1",
-      "to": "n4"
+      "to": "n6"
     }
   ],
-  "nid": 6,
+  "nid": 8,
   "annotations": []
 }
