@@ -189,6 +189,27 @@
       "shape": "rounded",
       "borderColor": "#00ff00",
       "borderWidth": 2
+    },
+    {
+      "id": "n27",
+      "x": 345,
+      "y": 166,
+      "w": 0,
+      "h": 0,
+      "text": "02_WorkPLan",
+      "ci": 4,
+      "link": "https://drive.google.com/drive/folders/1f5rXlCjZkXK3cQZXvzeaPPLgecy8076U?usp=drive_link",
+      "collapsed": false,
+      "isNote": false,
+      "fontSize": 13,
+      "fontFamily": "Nunito",
+      "textColor": "",
+      "bold": false,
+      "italic": false,
+      "textAlign": "left",
+      "shape": "rounded",
+      "borderColor": "",
+      "borderWidth": 0
     }
   ],
   "edges": [
@@ -206,16 +227,21 @@
       "id": "e15",
       "from": "n1",
       "to": "n14"
+    },
+    {
+      "id": "e28",
+      "from": "n1",
+      "to": "n27"
     }
   ],
-  "nid": 27,
+  "nid": 29,
   "annotations": [
     {
       "id": "a22",
-      "x1": 523.4321123288001,
-      "y1": 322.40739798840184,
-      "x2": 580.2222357855902,
-      "y2": 323.6419658896364,
+      "x1": 522.4321123288001,
+      "y1": 325.40739798840184,
+      "x2": 579.2222357855902,
+      "y2": 326.6419658896364,
       "color": "#c0392b",
       "hasArrow": true,
       "thickness": 2
