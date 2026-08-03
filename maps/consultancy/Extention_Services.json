@@ -24,8 +24,8 @@
     },
     {
       "id": "n2",
-      "x": -207.24715922217482,
-      "y": 301.11111111111114,
+      "x": -132.1364943300141,
+      "y": 303.14112908116954,
       "w": 0,
       "h": 0,
       "text": "_Proposal_stage",
@@ -45,8 +45,8 @@
     },
     {
       "id": "n4",
-      "x": 45.77387820095515,
-      "y": 479.00510986354055,
+      "x": 25.473698500371157,
+      "y": 481.0351278335989,
       "w": 0,
       "h": 0,
       "text": "00_Proposal",
@@ -66,8 +66,8 @@
     },
     {
       "id": "n14",
-      "x": 340.67746015559914,
-      "y": 467.10581271484267,
+      "x": 348.13430283481694,
+      "y": 484.95391949926733,
       "w": 0,
       "h": 0,
       "text": "01_Contract_Budget",
@@ -192,8 +192,8 @@
     },
     {
       "id": "n27",
-      "x": 304.1867310049008,
-      "y": 163.18529179344145,
+      "x": 450.3480248491055,
+      "y": 77.92453705098872,
       "w": 0,
       "h": 0,
       "text": "02_WorkPLan",
@@ -202,6 +202,27 @@
       "collapsed": false,
       "isNote": false,
       "fontSize": 15,
+      "fontFamily": "Nunito",
+      "textColor": "",
+      "bold": false,
+      "italic": false,
+      "textAlign": "left",
+      "shape": "rounded",
+      "borderColor": "",
+      "borderWidth": 0
+    },
+    {
+      "id": "n29",
+      "x": 155.20019129936634,
+      "y": 85.12650634401605,
+      "w": 0,
+      "h": 0,
+      "text": "04_Personnel",
+      "ci": 4,
+      "link": "https://drive.google.com/drive/folders/1JmGooUqZe06p-w-epwlKYuCU66FiUN52?usp=drive_link",
+      "collapsed": false,
+      "isNote": false,
+      "fontSize": 13,
       "fontFamily": "Nunito",
       "textColor": "",
       "bold": false,
@@ -232,9 +253,14 @@
       "id": "e28",
       "from": "n1",
       "to": "n27"
+    },
+    {
+      "id": "e30",
+      "from": "n1",
+      "to": "n29"
     }
   ],
-  "nid": 29,
+  "nid": 31,
   "annotations": [
     {
       "id": "a22",
