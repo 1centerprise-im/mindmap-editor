@@ -21,9 +21,36 @@
       "shape": "rounded",
       "borderColor": "",
       "borderWidth": 0
+    },
+    {
+      "id": "n2",
+      "x": 660.5,
+      "y": 189.5,
+      "w": 0,
+      "h": 0,
+      "text": "01_Policies",
+      "ci": 0,
+      "link": "https://drive.google.com/drive/folders/1EpoSsXx1jVEWM6LABgZXcRv7VRz__o4U?usp=drive_link",
+      "collapsed": false,
+      "isNote": false,
+      "fontSize": 13,
+      "fontFamily": "Nunito",
+      "textColor": "",
+      "bold": false,
+      "italic": false,
+      "textAlign": "left",
+      "shape": "rounded",
+      "borderColor": "",
+      "borderWidth": 0
     }
   ],
-  "edges": [],
-  "nid": 2,
+  "edges": [
+    {
+      "id": "e3",
+      "from": "n1",
+      "to": "n2"
+    }
+  ],
+  "nid": 4,
   "annotations": []
 }
