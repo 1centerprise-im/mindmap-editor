@@ -116,6 +116,11 @@
           "status": "active"
         }
       ]
+    },
+    {
+      "name": "favz_hact",
+      "label": "FAVZ_HACT",
+      "maps": []
     }
   ]
 }
