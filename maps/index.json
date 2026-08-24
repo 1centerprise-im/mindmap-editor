@@ -121,6 +121,11 @@
       "name": "favz_hact",
       "label": "FAVZ_HACT",
       "maps": []
+    },
+    {
+      "name": "favz_hact",
+      "label": "FAVZ_HACT",
+      "maps": []
     }
   ]
 }
