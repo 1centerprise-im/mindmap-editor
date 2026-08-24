@@ -120,7 +120,14 @@
     {
       "name": "favz_hact",
       "label": "FAVZ_HACT",
-      "maps": []
+      "maps": [
+        {
+          "id": "FAVZ_HACT",
+          "name": "FAVZ_HACT",
+          "number": "",
+          "status": "active"
+        }
+      ]
     },
     {
       "name": "favz_hact",
