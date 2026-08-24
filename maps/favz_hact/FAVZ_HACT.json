@@ -3,13 +3,13 @@
   "nodes": [
     {
       "id": "n1",
-      "x": 304,
-      "y": 293,
+      "x": 400,
+      "y": 300,
       "w": 0,
       "h": 0,
       "text": "FAVZ_HACT",
       "ci": 0,
-      "link": "",
+      "link": "https://drive.google.com/drive/folders/1rjq0bXOh-n6ArKZ5-VDHXAXsLexDlFIP?usp=drive_link",
       "collapsed": false,
       "isNote": false,
       "fontSize": 16,
