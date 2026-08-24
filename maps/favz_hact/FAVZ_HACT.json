@@ -42,6 +42,27 @@
       "shape": "rounded",
       "borderColor": "",
       "borderWidth": 0
+    },
+    {
+      "id": "n4",
+      "x": 682.5999755859375,
+      "y": 381,
+      "w": 0,
+      "h": 0,
+      "text": "FAVZ's_Activities",
+      "ci": 0,
+      "link": "https://drive.google.com/drive/folders/1eyiffvIekBjnrMhtxNzIUmBjSwZybJnB?usp=drive_link",
+      "collapsed": false,
+      "isNote": false,
+      "fontSize": 13,
+      "fontFamily": "Nunito",
+      "textColor": "",
+      "bold": false,
+      "italic": false,
+      "textAlign": "left",
+      "shape": "rounded",
+      "borderColor": "",
+      "borderWidth": 0
     }
   ],
   "edges": [
@@ -49,8 +70,13 @@
       "id": "e3",
       "from": "n1",
       "to": "n2"
+    },
+    {
+      "id": "e5",
+      "from": "n1",
+      "to": "n4"
     }
   ],
-  "nid": 4,
+  "nid": 6,
   "annotations": []
 }
