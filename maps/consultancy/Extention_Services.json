@@ -234,13 +234,13 @@
     },
     {
       "id": "n31",
-      "x": 629.8869436921269,
-      "y": 115.51522183613613,
+      "x": 604.0022584590962,
+      "y": 146.57684411577293,
       "w": 0,
       "h": 0,
       "text": "Shifo_Activities",
       "ci": 0,
-      "link": "",
+      "link": "https://drive.google.com/drive/folders/1IjEfWm3uQ4ml7diUdmPDzJcv967WDM5t?usp=drive_link",
       "collapsed": false,
       "isNote": false,
       "fontSize": 13,
@@ -250,8 +250,8 @@
       "italic": false,
       "textAlign": "left",
       "shape": "rounded",
-      "borderColor": "",
-      "borderWidth": 0
+      "borderColor": "#008000",
+      "borderWidth": 1
     }
   ],
   "edges": [
