@@ -45,8 +45,8 @@
     },
     {
       "id": "n4",
-      "x": 25.473698500371157,
-      "y": 481.0351278335989,
+      "x": -32.42171413750743,
+      "y": 435.47808182346495,
       "w": 0,
       "h": 0,
       "text": "00_Proposal",
@@ -66,8 +66,8 @@
     },
     {
       "id": "n14",
-      "x": 348.13430283481694,
-      "y": 484.95391949926733,
+      "x": 152.61864704132535,
+      "y": 497.29228612701195,
       "w": 0,
       "h": 0,
       "text": "01_Contract_Budget",
@@ -192,8 +192,8 @@
     },
     {
       "id": "n27",
-      "x": 450.3480248491055,
-      "y": 77.92453705098872,
+      "x": 347.8446713263041,
+      "y": 75.07722167535535,
       "w": 0,
       "h": 0,
       "text": "02_WorkPLan",
@@ -220,6 +220,27 @@
       "text": "04_Personnel",
       "ci": 4,
       "link": "https://drive.google.com/drive/folders/1JmGooUqZe06p-w-epwlKYuCU66FiUN52?usp=drive_link",
+      "collapsed": false,
+      "isNote": false,
+      "fontSize": 13,
+      "fontFamily": "Nunito",
+      "textColor": "",
+      "bold": false,
+      "italic": false,
+      "textAlign": "left",
+      "shape": "rounded",
+      "borderColor": "",
+      "borderWidth": 0
+    },
+    {
+      "id": "n31",
+      "x": 629.8869436921269,
+      "y": 115.51522183613613,
+      "w": 0,
+      "h": 0,
+      "text": "Shifo_Activities",
+      "ci": 0,
+      "link": "",
       "collapsed": false,
       "isNote": false,
       "fontSize": 13,
@@ -258,9 +279,15 @@
       "id": "e30",
       "from": "n1",
       "to": "n29"
+    },
+    {
+      "id": "e32",
+      "from": "n1",
+      "to": "n31",
+      "color": "#008000"
     }
   ],
-  "nid": 31,
+  "nid": 33,
   "annotations": [
     {
       "id": "a22",
