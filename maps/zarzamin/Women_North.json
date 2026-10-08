@@ -24,8 +24,8 @@
     },
     {
       "id": "n2",
-      "x": 628.4493460949557,
-      "y": 173.27408628110533,
+      "x": 466.4493460949557,
+      "y": 119.27408628110533,
       "w": 0,
       "h": 0,
       "text": "00_Proposal",
@@ -45,13 +45,34 @@
     },
     {
       "id": "n4",
-      "x": 629.0419386875483,
-      "y": 355.6691480095004,
+      "x": 530.0419386875483,
+      "y": 409.6691480095004,
       "w": 0,
       "h": 0,
       "text": "01_Contract",
       "ci": 0,
       "link": "https://drive.google.com/drive/folders/1TXKt5sWHTacePZmLKG5eaoURwQXUbYcT?usp=drive_link",
+      "collapsed": false,
+      "isNote": false,
+      "fontSize": 13,
+      "fontFamily": "Nunito",
+      "textColor": "",
+      "bold": false,
+      "italic": false,
+      "textAlign": "left",
+      "shape": "rounded",
+      "borderColor": "",
+      "borderWidth": 0
+    },
+    {
+      "id": "n6",
+      "x": 711.6444261338976,
+      "y": 267.47161714530284,
+      "w": 0,
+      "h": 0,
+      "text": "WN_Project_Implementation",
+      "ci": 0,
+      "link": "",
       "collapsed": false,
       "isNote": false,
       "fontSize": 13,
@@ -77,6 +98,6 @@
       "to": "n4"
     }
   ],
-  "nid": 6,
+  "nid": 7,
   "annotations": []
 }
