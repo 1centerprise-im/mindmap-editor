@@ -3,8 +3,8 @@
   "nodes": [
     {
       "id": "n1",
-      "x": 371.83950617283955,
-      "y": 266.88888888888886,
+      "x": 177.83950617283955,
+      "y": 271.88888888888886,
       "w": 0,
       "h": 0,
       "text": "Women_North",
@@ -23,56 +23,14 @@
       "borderWidth": 0
     },
     {
-      "id": "n2",
-      "x": 466.4493460949557,
-      "y": 119.27408628110533,
-      "w": 0,
-      "h": 0,
-      "text": "00_Proposal",
-      "ci": 0,
-      "link": "https://drive.google.com/drive/folders/1A56_sIKDEuK_mn7ZeKFD2RNnkFYcv-T1?usp=drive_link",
-      "collapsed": false,
-      "isNote": false,
-      "fontSize": 13,
-      "fontFamily": "Nunito",
-      "textColor": "",
-      "bold": false,
-      "italic": false,
-      "textAlign": "left",
-      "shape": "rounded",
-      "borderColor": "",
-      "borderWidth": 0
-    },
-    {
-      "id": "n4",
-      "x": 530.0419386875483,
-      "y": 409.6691480095004,
-      "w": 0,
-      "h": 0,
-      "text": "01_Contract",
-      "ci": 0,
-      "link": "https://drive.google.com/drive/folders/1TXKt5sWHTacePZmLKG5eaoURwQXUbYcT?usp=drive_link",
-      "collapsed": false,
-      "isNote": false,
-      "fontSize": 13,
-      "fontFamily": "Nunito",
-      "textColor": "",
-      "bold": false,
-      "italic": false,
-      "textAlign": "left",
-      "shape": "rounded",
-      "borderColor": "",
-      "borderWidth": 0
-    },
-    {
       "id": "n6",
-      "x": 711.6444261338976,
-      "y": 267.47161714530284,
+      "x": 397.6444261338976,
+      "y": 172.47161714530284,
       "w": 0,
       "h": 0,
       "text": "WN_Project_Implementation",
       "ci": 0,
-      "link": "",
+      "link": "https://drive.google.com/drive/folders/1y8IV9vLdbDIVGYm1TfsMP6t0jXqIHGTs?usp=drive_link",
       "collapsed": false,
       "isNote": false,
       "fontSize": 13,
@@ -88,16 +46,11 @@
   ],
   "edges": [
     {
-      "id": "e3",
+      "id": "e7",
       "from": "n1",
-      "to": "n2"
-    },
-    {
-      "id": "e5",
-      "from": "n1",
-      "to": "n4"
+      "to": "n6"
     }
   ],
-  "nid": 7,
+  "nid": 8,
   "annotations": []
 }
