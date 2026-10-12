@@ -45,8 +45,8 @@
     },
     {
       "id": "n10",
-      "x": 205.16815728964028,
-      "y": 5.6470940515490184,
+      "x": 233.16815728964028,
+      "y": 91.64709405154902,
       "w": 0,
       "h": 0,
       "text": "1_Inception",
@@ -66,8 +66,8 @@
     },
     {
       "id": "n11",
-      "x": 292.09701873681627,
-      "y": -57.45737844152324,
+      "x": 307.09701873681627,
+      "y": -3.4573784415232396,
       "w": 0,
       "h": 0,
       "text": "2_Mobilization",
@@ -210,27 +210,6 @@
       "shape": "circle",
       "borderColor": "#0080c0",
       "borderWidth": 2
-    },
-    {
-      "id": "n26",
-      "x": 171.16453953023824,
-      "y": 108.30897090027759,
-      "w": 0,
-      "h": 0,
-      "text": "00_Team",
-      "ci": 0,
-      "link": "https://drive.google.com/drive/folders/1eTfLjr4gN1pgmLltUD-3B9VpmcmIkhgU?usp=drive_link",
-      "collapsed": false,
-      "isNote": false,
-      "fontSize": 13,
-      "fontFamily": "Nunito",
-      "textColor": "",
-      "bold": false,
-      "italic": false,
-      "textAlign": "left",
-      "shape": "rounded",
-      "borderColor": "",
-      "borderWidth": 0
     }
   ],
   "edges": [
@@ -279,13 +258,8 @@
       "id": "e25",
       "from": "n8",
       "to": "n17"
-    },
-    {
-      "id": "e28",
-      "from": "n8",
-      "to": "n26"
     }
   ],
-  "nid": 29,
+  "nid": 26,
   "annotations": []
 }
