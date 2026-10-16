@@ -3,8 +3,8 @@
   "nodes": [
     {
       "id": "n6",
-      "x": -32.208039732580446,
-      "y": 240.34476323509352,
+      "x": 17.791960267419554,
+      "y": 252.34476323509352,
       "w": 0,
       "h": 0,
       "text": "WN_Project_Implementation",
@@ -213,8 +213,8 @@
     },
     {
       "id": "n26",
-      "x": 106.16453953023824,
-      "y": 19.308970900277586,
+      "x": 160.16453953023824,
+      "y": -33.691029099722414,
       "w": 0,
       "h": 0,
       "text": "00_Team",
@@ -231,6 +231,27 @@
       "shape": "rounded",
       "borderColor": "",
       "borderWidth": 3
+    },
+    {
+      "id": "n29",
+      "x": -55.83546046976181,
+      "y": 63.6193656571744,
+      "w": 0,
+      "h": 0,
+      "text": "Google Meet Link",
+      "ci": 0,
+      "link": "https://meet.google.com/ucg-nncq-ygi",
+      "collapsed": false,
+      "isNote": false,
+      "fontSize": 13,
+      "fontFamily": "Nunito",
+      "textColor": "",
+      "bold": false,
+      "italic": false,
+      "textAlign": "left",
+      "shape": "rounded",
+      "borderColor": "",
+      "borderWidth": 0
     }
   ],
   "edges": [
@@ -284,8 +305,13 @@
       "id": "e28",
       "from": "n8",
       "to": "n26"
+    },
+    {
+      "id": "e30",
+      "from": "n29",
+      "to": "n26"
     }
   ],
-  "nid": 29,
+  "nid": 31,
   "annotations": []
 }
