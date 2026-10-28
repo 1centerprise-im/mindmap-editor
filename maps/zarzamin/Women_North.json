@@ -213,8 +213,8 @@
     },
     {
       "id": "n26",
-      "x": 826.1645395302382,
-      "y": -6.691029099722414,
+      "x": 825.1645395302382,
+      "y": -7.691029099722414,
       "w": 0,
       "h": 0,
       "text": "00_Team",
@@ -315,6 +315,27 @@
       "shape": "rounded",
       "borderColor": "",
       "borderWidth": 0
+    },
+    {
+      "id": "n39",
+      "x": 1094.1645395302382,
+      "y": 218.3089709002776,
+      "w": 0,
+      "h": 0,
+      "text": "1_ Нақшаи ҷаласаҳо",
+      "ci": 4,
+      "link": "https://drive.google.com/drive/folders/1rRg6agCTGzaFg9QJTlpWV3sO5vo8KdBY?usp=drive_link",
+      "collapsed": false,
+      "isNote": false,
+      "fontSize": 13,
+      "fontFamily": "Nunito",
+      "textColor": "",
+      "bold": false,
+      "italic": false,
+      "textAlign": "left",
+      "shape": "rounded",
+      "borderColor": "",
+      "borderWidth": 0
     }
   ],
   "edges": [
@@ -390,8 +411,13 @@
       "id": "e37",
       "from": "n26",
       "to": "n36"
+    },
+    {
+      "id": "e40",
+      "from": "n26",
+      "to": "n39"
     }
   ],
-  "nid": 39,
+  "nid": 41,
   "annotations": []
 }
